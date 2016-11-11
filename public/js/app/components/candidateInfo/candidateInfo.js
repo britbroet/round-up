@@ -12,7 +12,6 @@
     candidateInfo.candidate = {};
     candidateInfo.position = {};
 
-
 	  var id = $stateParams.id;
 	  RoundService.getRound(id, function(res) {
 	    candidateInfo.round = res.data;
@@ -20,7 +19,6 @@
 	    candidateInfo.candidate = candidateInfo.round.candidate;
 	    candidateInfo.position = candidateInfo.round.position;
 	  });
-
   }
 
   CandidateInfo.$inject = ['$state', '$stateParams', 'RoundService', 'CandidateService', 'PositionService'];
