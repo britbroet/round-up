@@ -29,6 +29,7 @@ angular.module('Roundup')
   $scope.questions = {};
   $scope.positions = {};
   $scope.candidates = {};
+  $scope.interviews = {};
   $scope.users = {};
   $scope.round = {
     candidate: {
@@ -38,6 +39,9 @@ angular.module('Roundup')
     position: {
       title: '',
       description: ''
+    },
+    interviews: {
+      name: ''
     }
   };
 

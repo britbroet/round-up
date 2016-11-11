@@ -24,6 +24,10 @@ angular.module('Roundup', ['ui.router', 'ui.bootstrap'])
   	url: '/interview',
   	templateUrl: 'js/app/views/interview.html',
 	})
+  .state('interviewCandidate', {
+    url: '/interview/:id/:interviewId',
+    templateUrl: 'js/app/views/interview.html',
+  })
   .state('roundReview', {
     url: '/review',
     templateUrl: 'js/app/views/roundReview.html',

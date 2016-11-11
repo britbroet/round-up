@@ -1,11 +1,20 @@
 <div class="component">
-	<div ng-repeat="round in roundList.rounds" class="well">
+	<div ng-repeat="round in roundList.rounds" class="well col-xs-5 round-list-item">
 		<a ng-href="round/{{round._id}}">
 	  		<strong>{{round.candidate.firstName}}
 	  		{{round.candidate.lastName}}</strong><br>
 	  		{{round.position.title}}<br>
 	  		<em>{{round.position.description}}</em>
 		</a>
+		<h5>Interview Candidate:</h5>
+		<div ng-if="round.interviews.length > 0">
+			<div ng-repeat="interview in round.interviews" style="display: inline-block;">
+				<a ng-href="interview/{{$parent.$parent.round._id}}/{{interview._id}}" class="btn btn-default">{{interview.name}}</a>
+			</div>
+		</div>
+		<div ng-if="round.interviews.length === 0">
+			<em>No interviews scheduled</em>
+		</div>
 	</div>
 </div>
 

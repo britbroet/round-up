@@ -54,6 +54,10 @@
     cursor: pointer;
 }
 
+/* Rounds List */
+.round-list-item {
+    margin: 20px;
+}
 
 
 /*Setup*/
