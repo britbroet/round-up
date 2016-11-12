@@ -25,7 +25,7 @@ angular.module('Roundup')
 
 }])
 
-.controller('EditRoundCtrl', ['$scope', '$stateParams', '$state', 'QuestionService', 'CandidateService', 'UserService', 'RoundService', function($scope, $stateParams, $state, QuestionService, CandidateService, UserService, RoundService) {
+.controller('EditRoundCtrl', ['$scope', '$mdDialog','$stateParams', '$state', 'QuestionService', 'CandidateService', 'UserService', 'RoundService', function($scope, $mdDialog, $stateParams, $state, QuestionService, CandidateService, UserService, RoundService) {
   $scope.questions = {};
   $scope.positions = {};
   $scope.candidates = {};
@@ -75,6 +75,28 @@ angular.module('Roundup')
       $state.go('rounds');
     })
   }
+
+  $scope.showConfirm = function(ev, round) {
+      // Appending dialog to document.body to cover sidenav in docs app
+      var thisRound = round;
+      var confirm = $mdDialog.confirm()
+            .title('Are you sure you want to delete this round?')
+            .textContent('Warning, deleteing is not reversible.')
+            .ariaLabel('Lucky day')
+            .targetEvent(ev)
+            .ok('Delete Round')
+            .cancel('Cancel');
+
+      $mdDialog.show(confirm).then(function() {
+        console.log("confirm delete")
+        RoundService.deleteRound(thisRound, function(res) {
+          console.log("deleted")
+          $state.go('rounds');
+          });
+      }, function() {
+        console.log("cancel")
+      })
+    }
 }])
 
 .controller('EditCandidateCtrl', ['$scope', '$stateParams', '$state', 'CandidateService',
