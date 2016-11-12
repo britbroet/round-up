@@ -6,7 +6,9 @@ var roundSchema = new mongoose.Schema({
   date: String,
   //questions: [],
   questions: [
-  	{question: String}],
+  	{question: String,
+  		responses: [{ userId: String, score: String, notes: String }]
+  	}],
   interviews: [
   	{name: String}]
 });

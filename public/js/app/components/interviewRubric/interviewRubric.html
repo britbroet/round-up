@@ -1,7 +1,7 @@
 <div class="component">
   <em>components > interviewRubric > interviewRubric.html</em>
 
-  <form ng-submit="">
+  <form ng-submit="interviewRubric.submitScores()" >
     <!-- <div ng-repeat="question in questions"> -->
     <div class="question-container" ng-repeat="question in interviewRubric.questions">
       <div class="row">
@@ -11,23 +11,25 @@
       </div>
       <div class="row">
         <div class="col-xs-8">
-          <textarea class="form-control" rows="3" name="notes{{question._id}}" ng-model="interviewRubric.noteInput"></textarea>
+
+          <textarea class="form-control" rows="3" name="question._id" id="{{question._id}}" ng-model="interviewRubric.answers[question._id]"></textarea>
+
         </div>
         <div class="col-xs-4">
           <label class="radio-inline">
-            <input type="radio" name="score{{question._id}}" id="" value="option1"> 1
+            <input type="radio" name="score{{question._id}}" id="" value="1"> 1
           </label>
           <label class="radio-inline">
-            <input type="radio" name="score{{question._id}}" id="" value="option2"> 2
+            <input type="radio" name="score{{question._id}}" id="" value="2"> 2
           </label>
           <label class="radio-inline">
-            <input type="radio" name="score{{question._id}}" id="" value="option3"> 3
+            <input type="radio" name="score{{question._id}}" id="" value="3"> 3
           </label>
           <label class="radio-inline">
-            <input type="radio" name="score{{question._id}}" id="" value="option2"> 4
+            <input type="radio" name="score{{question._id}}" id="" value="4"> 4
           </label>
           <label class="radio-inline">
-            <input type="radio" name="score{{question._id}}" id="" value="option3"> 5
+            <input type="radio" name="score{{question._id}}" id="" value="5"> 5
           </label>
         </div>
       </div>
