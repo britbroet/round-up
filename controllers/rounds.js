@@ -61,4 +61,13 @@ router.route('/:id/questions')
     });
   });
 
+router.route('/:id/responses')
+  .put(function(req, res) {
+    Round.findOneAndUpdate({ _id: req.params.id }, {$set:{responses:req.body}}, function(err) {
+      if (err) return res.status(500).send(err);
+      console.log('response success');
+      return res.send({ message: 'success' });
+    });
+  });
+
 module.exports = router;

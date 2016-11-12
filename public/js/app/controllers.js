@@ -29,6 +29,7 @@ angular.module('Roundup')
   $scope.questions = {};
   $scope.positions = {};
   $scope.candidates = {};
+  $scope.interviews = {};
   $scope.users = {};
   $scope.round = {
     candidate: {
@@ -38,6 +39,9 @@ angular.module('Roundup')
     position: {
       title: '',
       description: ''
+    },
+    interviews: {
+      name: ''
     }
   };
 
@@ -166,9 +170,11 @@ angular.module('Roundup')
     });
   }
 }])
+
 .controller('AlertCtrl', ['$scope', 'Alerts', function($scope, Alerts) {
   $scope.Alerts = Alerts;
 }])
+
 .controller('AuthCtrl', ['$scope', '$timeout', 'Auth', function($scope, $timeout, Auth){
   $scope.currentUser = {}
   $scope.loggedIn = false;
@@ -179,4 +185,15 @@ angular.module('Roundup')
   $scope.$on('loggedIn', function(){
     $scope.loggedIn = true;
   });
+}])
+
+.controller('ReviewCtrl', ['$scope', '$state', '$stateParams', 'RoundService', function($scope, $state, $stateParams, RoundService) {
+  $scope.rounds = {};
+
+  var thisId = $stateParams.id;
+
+  RoundService.getRound(thisId, function(res) {
+    $scope.round = res.data;
+  });
+
 }]);

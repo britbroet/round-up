@@ -207,4 +207,12 @@ angular.module('Roundup')
       console.log('Add Question to Round Error: ', res);
     });
   }
+// ADD NEW RESPONSES TO EXISTING ROUND
+  this.addResponsesToRound = function(responseData, roundId, callback) {
+    $http.put('/api/rounds/' + roundId + '/responses', responseData).then(function success(res) {
+      callback(res);
+    }, function error(res) {
+      console.log('Error adding responses: ', res);
+    });
+  }
 }]);

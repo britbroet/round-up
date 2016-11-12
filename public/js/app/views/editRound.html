@@ -22,6 +22,11 @@
 	<br>
 <hr>
 
+Interviews Scheduled:
+<div ng-repeat="interview in round.interviews" class="btn btn-default" style="margin: 10px;">
+	{{interview.name}}
+</div>
+
 <h3>Add Interview Question </h3>
 <form ng-submit="addQuestionToRound()">
  <input type="text" placeholder="Enter question" ng-model="newQuestion">

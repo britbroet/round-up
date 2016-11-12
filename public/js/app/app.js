@@ -24,9 +24,14 @@ angular.module('Roundup', ['ui.router','ui.bootstrap','ngMaterial','ngMessages',
   	url: '/interview',
   	templateUrl: 'js/app/views/interview.html',
 	})
+  .state('interviewCandidate', {
+    url: '/interview/:id/:interviewId',
+    templateUrl: 'js/app/views/interview.html',
+  })
   .state('roundReview', {
-    url: '/review',
+    url: '/review/:id',
     templateUrl: 'js/app/views/roundReview.html',
+    controller: 'ReviewCtrl'
   })
   .state('users', {
     url: '/users',

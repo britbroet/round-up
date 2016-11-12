@@ -54,6 +54,10 @@
     cursor: pointer;
 }
 
+/* Rounds List */
+.round-list-item {
+    margin: 20px;
+}
 
 
 /*Setup*/
@@ -61,4 +65,23 @@
 .setup-interview-list {
     font-size: 16px;
     padding: 20px;
+}
+
+#setup {
+    padding: 0 20px;
+}
+
+#setup .form_fields_container {
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    padding: 30px;
+}
+
+#setup .form_submit {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#setup .step_title {
+    text-align: center;
 }

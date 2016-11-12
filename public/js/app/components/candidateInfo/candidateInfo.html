@@ -1,8 +1,11 @@
 <div class="component">  
   <em>components > candidateInfo > candidateInfo.html</em>
 
-  <h1>Batman Broetje</h1>
-  <h2>Applying for: <strong>Director of HR</strong></h2>
+  <h1>{{candidateInfo.candidate.firstName}} {{candidateInfo.candidate.lastName}}</h1>
+
+  <h2>Applying for: <strong>{{candidateInfo.position.title}}</strong></h2>
+  <div><em>{{candidateInfo.position.description}}</em></div>
+  <br>
   <a ng-href="#" class="btn btn-default">linkedin</a>
   <a ng-href="#" class="btn btn-default">Uploaded Resume</a>
 </div>
