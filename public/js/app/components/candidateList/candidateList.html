@@ -15,7 +15,7 @@
       {{candidate.firstName}} {{candidate.lastName}}
       <br>
       <a href="/candidates/{{candidate._id}}"><button style="font-size: 13px">Edit</button></a>
-      <button ng-click="candidateList.delete(candidate)" style="font-size: 13px; color: red">Remove</button>
+      <button ng-click="showConfirm($event, candidate)" style="font-size: 13px; color: red">Remove</button>
     </div>
   </li>
 </ul>

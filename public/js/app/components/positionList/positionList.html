@@ -15,7 +15,7 @@
       {{position.jobTitle}}
       <br>
       <a href="/positions/{{position._id}}"><button style="font-size: 13px">Edit</button></a>
-      <button ng-click="positionList.delete(position)" style="font-size: 13px; color: red">Remove</button>
+      <button ng-click="showConfirm($event, position)" style="font-size: 13px; color: red">Remove</button>
     </div>
   </li>
 </ul>

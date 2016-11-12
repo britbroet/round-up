@@ -1,4 +1,4 @@
-angular.module('Roundup', ['ui.router', 'ui.bootstrap'])
+angular.module('Roundup', ['ui.router','ui.bootstrap','ngMaterial','ngMessages','material.svgAssetsCache'])
 .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider){
 	$urlRouterProvider.otherwise('/'); // usually goes to a 404 route
 

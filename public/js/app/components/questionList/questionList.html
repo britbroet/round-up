@@ -4,7 +4,7 @@
 			{{question.simpleId}}. {{question.question}}
       <br>
       <a href="/questions/{{question._id}}"><button style="font-size: 13px">Edit</button></a>
-      <button ng-click="questionList.delete(question)" style="font-size: 13px; color: red">Remove</button>
+      <button ng-click="showConfirm($event, question)" style="font-size: 13px; color: red">Remove</button>
 		</div>
 	</div>
 </div>

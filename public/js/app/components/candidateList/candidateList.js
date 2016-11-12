@@ -6,7 +6,7 @@
     controllerAs: 'candidateList'
   });
 
-  function CandidateList(CandidateService) {
+  function CandidateList($scope, $mdDialog, CandidateService) {
     var candidateList = this;
     candidateList.delete = function(candidate) {
       CandidateService.deleteCandidate(candidate, function(res) {
@@ -20,7 +20,31 @@
     CandidateService.getAllCandidates(function(data) {
       candidateList.candidates = data.data;
     });
-  };
 
-  CandidateList.$inject = ['CandidateService'];
+    $scope.showConfirm = function(ev, candidate) {
+      // Appending dialog to document.body to cover sidenav in docs app
+      var thisCandidate = candidate;
+      var confirm = $mdDialog.confirm()
+            .title('Are you sure you want to delete this candidate?')
+            .textContent('Warning, deleteing is not reversible.')
+            .ariaLabel('Lucky day')
+            .targetEvent(ev)
+            .ok('Delete Candidate')
+            .cancel('Cancel');
+
+      $mdDialog.show(confirm).then(function() {
+        console.log("confirm delete")
+        CandidateService.deleteCandidate(thisCandidate, function(res) {
+          console.log("deleted")
+          candidateList.candidates = candidateList.candidates.filter(function(item) {
+            return item !== thisCandidate;
+          });
+        });
+      }, function() {
+        console.log("cancel")
+      });
+    };
+};
+
+  CandidateList.$inject = ['$scope', '$mdDialog', 'CandidateService'];
 })()
