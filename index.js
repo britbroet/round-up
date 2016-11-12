@@ -9,7 +9,7 @@ var User = require('./models/user');
 var secret = "mysupersecretpassword";
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/roundup');
+mongoose.connect(process.env.MONGODB_URI ||'mongodb://localhost/roundup');
 
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
@@ -37,6 +37,6 @@ app.get('/*', function(req, res) {
   res.sendFile(__dirname + '/public/index.html');
 });
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000)
 
 
