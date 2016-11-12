@@ -1,24 +1,39 @@
-<div class="component">
-	<div ng-repeat="round in roundList.rounds" class="well col-xs-5 round-list-item">
-		<a ng-href="review/{{round._id}}">
-	  		<strong>{{round.candidate.firstName}}
-	  		{{round.candidate.lastName}}</strong><br>
-	  		{{round.position.title}}<br>
-	  		<em>{{round.position.description}}</em>
-		</a>
-		<a ng-href="round/{{round._id}}" class="btn btn-info">Edit</a>
-		<h5>Interview Candidate:</h5>
-		<div ng-if="round.interviews.length > 0">
-			<div ng-repeat="interview in round.interviews" style="display: inline-block;">
-				<a ng-href="interview/{{$parent.$parent.round._id}}/{{interview._id}}" class="btn btn-default">{{interview.name}}</a>
+
+<div class="component_flex">
+	<div class="search_filter">
+		<form>
+			Filter by candidate or position info: <input class="search_filter_input" ng-model="query" type="text" placeholder="ex: 'Bob', 'Dole', 'manager', 'fly plans', etc." autofocus>
+		</form>
+	</div>
+
+	<hr>
+
+	<div class="row">
+		<div ng-repeat="round in roundList.rounds | filter: query" class="col-xs-4">
+			<div class="list_item">
+				<div>
+					<a ng-href="review/{{round._id}}">
+			  			<strong>{{round.candidate.firstName}} {{round.candidate.lastName}}</strong> | {{round.position.title}}
+			  		</a>
+			  	</div>
+			  		
+			  	<div class="list_position_desc">{{round.position.description}}</div>
+
+				<h5>Interview Candidate:</h5>
+				<div ng-if="round.interviews.length > 0">
+					<div ng-repeat="interview in round.interviews" style="display: inline-block;">
+						<a ng-href="interview/{{$parent.$parent.round._id}}/{{interview._id}}" class="btn btn-default">{{interview.name}}</a>
+					</div>
+				</div>
+				<div ng-if="round.interviews.length === 0">
+					<em>No interviews scheduled</em>
+				</div>
 			</div>
-		</div>
-		<div ng-if="round.interviews.length === 0">
-			<em>No interviews scheduled</em>
 		</div>
 	</div>
 </div>
 
 
-{{roundList.round}}
+
+
 
