@@ -6,11 +6,12 @@ var roundSchema = new mongoose.Schema({
   date: String,
   //questions: [],
   questions: [
-  	{question: String,
-  		responses: [{ userId: String, score: String, notes: String }]
+  	{question: String //,
+  		// responses: [{ userId: String, interviewId: String, score: String, notes: String }]
   	}],
   interviews: [
-  	{name: String}]
+  	{name: String}],
+  responses: [{ userName: String, questionId: String, interviewId: String, score: String, notes: String }]
 });
 
 var Round = mongoose.model('Round', roundSchema);

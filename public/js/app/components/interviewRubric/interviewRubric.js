@@ -13,6 +13,7 @@
     interviewRubric.questions = {};
     interviewRubric.answers = {};
     interviewRubric.userData = {};
+    interviewRubric.responses = [];
     // interviewRubric.newResponse = {
     // 	questionNote: '',
     // 	questionScore: ''
@@ -30,9 +31,11 @@
     // 	}
     // }
 
+    //responses: [{ userId: String, interviewId: String, score: String, notes: String }]
+
     interviewRubric.newResponse = {
-    	questionId: '',
     	userId: '',
+    	interviewId: '',
     	score: '',
     	notes: ''
     }
@@ -46,15 +49,17 @@
     console.log('interviewRubric.userData.firstName ', interviewRubric.userData);
 
     // ACCESS ROUND DATA
-    var routeId = $stateParams.id;
+    var roundId = $stateParams.id;
     var interviewId = $stateParams.interviewId;
     //var userId = '';
 
-	  RoundService.getRound(routeId, function(res) {
+	  RoundService.getRound(roundId, function(res) {
 	    interviewRubric.round = res.data;
 	    console.log('round data? ', res.data);
 	    interviewRubric.questions = res.data.questions;
 	    console.log('questions? ', interviewRubric.questions);
+	    interviewRubric.responses = res.data.responses;
+	    console.log('responses: ', interviewRubric.responses);
 	  });
 
 	  // GET FORM DATA
@@ -71,26 +76,43 @@
 	  		console.log('submitting scores');
 	  		console.log('interview round form data answers: ', interviewRubric.answers);
 
-
+	  		// pull question IDs out of key:value in form data
 	  		var idsArray = Object.keys(interviewRubric.answers);
 	  		console.log('idsArray: ', idsArray);
 
 	  		var newObjs = [];
 
+
+	  		var existingResponses = interviewRubric.responses;
+	  		console.log('interviewRubric.existingResponses: ', existingResponses);
+	  		//var updatedResponseArray = existingResponses.concat()
+	  		var updatedResponseArray = existingResponses;
+	  		console.log('first updatedResponseArray: ', updatedResponseArray);
+
 	  		idsArray.forEach(function(thisId) {
-	  			var newObj = {
+	  			var newResponse = {
+	  				userName: interviewId,
 	  			 	questionId: thisId,
-	  			 	userId: interviewRubric.userData._id,
+	  			 	interviewId: interviewRubric.userData._id,
 	  			 	score: 2,
-	  			 	note: interviewRubric.answers[thisId]
-	  			 };
-	  			 console.log('1: ', interviewRubric.answers[thisId]);
-	  			 newObjs.push(newObj);
-	  			 newObj = {};
+	  			 	notes: interviewRubric.answers[thisId]
+	  			};
+	  			console.log('1: ', interviewRubric.answers[thisId]);
+	  			 //newObjs.push(newObj);
+	  			 //newObj = {};
+	  			updatedResponseArray.push(newResponse);
+	  			console.log('updatedResponseArray ', updatedResponseArray);
 	  		});
 
-	  		console.log('new objs: ', newObjs);
+	  		RoundService.addResponsesToRound(updatedResponseArray, roundId, function(res) {
+	  			console.log('roundservice firing, res: ', res);
+	  		});
+
+	  		
 	  	} 
+
+  
+
 
   }
 
