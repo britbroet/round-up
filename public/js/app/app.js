@@ -29,8 +29,9 @@ angular.module('Roundup', ['ui.router', 'ui.bootstrap'])
     templateUrl: 'js/app/views/interview.html',
   })
   .state('roundReview', {
-    url: '/review',
+    url: '/review/:id',
     templateUrl: 'js/app/views/roundReview.html',
+    controller: 'ReviewCtrl'
   })
   .state('users', {
     url: '/users',
