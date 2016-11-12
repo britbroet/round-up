@@ -59,6 +59,7 @@
 	  		});
 
 	  		RoundService.addResponsesToRound(updatedResponseArray, roundId, function(res) {
+        	window.location.href = '/review/' + roundId;
 	  		});	  		
 	  	} 
 

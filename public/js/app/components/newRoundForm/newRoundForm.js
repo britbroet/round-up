@@ -40,7 +40,27 @@
 
     newRoundForm.someThing = "addingCandidate";
 
-    newRoundForm.addCandidate = function() {
+
+    // IF USER ENTERS NEW CANDIDATE - (TODO)
+
+    //newRoundForm.selectedCandidateView = true;
+
+    // newRoundForm.candidateFormView = function() {
+    //   newRoundForm.selectedCandidateView = !newRoundForm.selectedCandidateView;
+    // }
+
+    // newRoundForm.addExistingCandidate = function() {
+    //   CandidateService.getCandidate(newRoundForm.selectedCandidate, function(res) {
+    //     newRoundForm.candidate = res.data;
+    //     newRoundForm.newRound.candidate.firstName = newRoundForm.candidate.firstName;
+    //     newRoundForm.newRound.candidate.lastName = newRoundForm.candidate.lastName;
+    //     console.log('candidate data added: ', newRoundForm.newRound);
+    //     newRoundForm.someThing = "addingPosition";
+    //   });
+    // }
+
+    // IF USER SELECTS CANDIDATE FROM LIST
+    newRoundForm.addExistingCandidate = function() {
       CandidateService.getCandidate(newRoundForm.selectedCandidate, function(res) {
         newRoundForm.candidate = res.data;
         newRoundForm.newRound.candidate.firstName = newRoundForm.candidate.firstName;
@@ -50,6 +70,7 @@
       });
     }
 
+    // USER ADDS POSITION
     newRoundForm.addPosition = function() {
       PositionService.getPosition(newRoundForm.selectedPosition, function(res) {
         console.log('position questions?', res.data.questions);
@@ -91,7 +112,7 @@
     newRoundForm.createRound = function() {
       RoundService.addRound(newRoundForm.newRound, function(data) {
         var newRoundId = data.data._id;
-        window.location.href = '/round/' + newRoundId;
+        window.location.href = '/review/' + newRoundId;
       }); 
     }
 

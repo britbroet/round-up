@@ -1,38 +1,62 @@
-<div class="component">
-	<em>newRoundForm > newRoundForm.html</em>
-
+<div id="setup">
 
 <!-- ADD CANDIDATE -->
-<div ng-if="newRoundForm.someThing == 'addingCandidate'">
-	<h3>Add Candidate</h3>
-	<form ng-submit="newRoundForm.addCandidate()">
-		<select ng-model="newRoundForm.selectedCandidate">
-			<option selected disabled value="none">Select Candidate</option>
-			<option ng-repeat="candidate in newRoundForm.candidates"
-					name="{{candidate}}" id="{{candidate}}"
-					value="{{candidate._id}}">
-				{{candidate.lastName}}, {{candidate.firstName}}
-			</option>
-		</select>
-	<input type="submit" value="Save Candidate" class="btn btn-info">
-	</form>
-</div>
+	<div ng-if="newRoundForm.someThing == 'addingCandidate'">
+		<h3 class="step_title">Select Candidate</h3>
+		<form ng-submit="newRoundForm.addExistingCandidate()">
+			<div class="form_fields_container">
+				<select ng-model="newRoundForm.selectedCandidate">
+					<option selected disabled value="none">Select Candidate</option>
+					<option ng-repeat="candidate in newRoundForm.candidates"
+							name="{{candidate}}" id="{{candidate}}"
+							value="{{candidate._id}}">
+						{{candidate.lastName}}, {{candidate.firstName}}
+					</option>
+				</select>
+			</div>
+
+			<div class="form_submit">
+				<input type="submit" value="Next: Select Position" class="btn btn-info">
+			</div>
+		</form>
+	</div>
+
+<!-- TODO: OPTION TO ADD NEW CANDIDATE - 
+	note: this way not great - would probably work better with inital radio button that determines whether user is adding new or selecting existing
+
+	<div ng-if="!newRoundForm.selectedCandidateView">
+		<a href="#" ng-click="newRoundForm.candidateFormView()"><< Select from existing instead</a>
+		<form ng-submit="newRoundForm.addNewCandidate()">
+			<div class="row">
+				<input type="text" class="form-control" ng-model="newRoundForm.newCandidate.firstName" placeholder="First Name">
+				<input type="text" class="form-control" ng-model="newRoundForm.newCandidate.lastName" placeholder="Last Name">
+			</div>
+			<div class="row text-center">
+				<input type="submit" value="Next (added new)" class="btn btn-info">
+			</div>
+		</form>	
+	</div> -->
+
 
 <!-- ADD POSITION -->
-<div ng-if="newRoundForm.someThing == 'addingPosition'">
-	<h3>Add position</h3>
-	<form ng-submit="newRoundForm.addPosition()">
-		<select ng-model="newRoundForm.selectedPosition">
-			<option selected disabled value="none">Select Position</option>
-			<option ng-repeat="position in newRoundForm.positions"
-					name="{{position}}" id="{{position}}"
-					value="{{position._id}}">
-				{{position.jobTitle}}
-			</option>
-		</select>
-	<input type="submit" value="Add Position" class="btn btn-info">
-	</form>
-</div>
+	<div ng-if="newRoundForm.someThing == 'addingPosition'">
+		<h3 class="step_title">Add position</h3>
+		<form ng-submit="newRoundForm.addPosition()">
+			<div class="form_fields_container">
+				<select ng-model="newRoundForm.selectedPosition">
+					<option selected disabled value="none">Select Position</option>
+					<option ng-repeat="position in newRoundForm.positions"
+							name="{{position}}" id="{{position}}"
+							value="{{position._id}}">
+						{{position.jobTitle}}
+					</option>
+				</select>
+			</div>
+			<div class="form_submit">
+				<input type="submit" value="Next: Add Interview Sessions" class="btn btn-info">
+			</div>
+		</form>
+	</div>
 
 <!-- ADD INTERVIEWS -->
 
@@ -52,6 +76,7 @@
 	  <form name="addInterviewForm" id="addInterviewForm" ng-submit="newQuestionForm.addInterview()">
 	    New Interview Session<br>
 	    <input class="form-control" type="text" name="addInterviewInput" placeholder="Ex. 'Session with hiring manger' or '1:00PM'" ng-model="newRoundForm.newInterview">
+	    
 	    <input type="submit">
 	  </form>
 	</div>
