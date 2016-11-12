@@ -91,9 +91,9 @@
 
 	  		idsArray.forEach(function(thisId) {
 	  			var newResponse = {
-	  				userName: interviewId,
+	  				userName: interviewRubric.userData.firstName,
 	  			 	questionId: thisId,
-	  			 	interviewId: interviewRubric.userData._id,
+	  			 	interviewId: interviewId,
 	  			 	score: 2,
 	  			 	notes: interviewRubric.answers[thisId]
 	  			};

@@ -34,7 +34,7 @@
 	    <div id="{{question._id}}" class="panel-collapse collapse">
 	      <div class="panel-body">
 	      	<div ng-repeat="response in round.responses" data-ng-if="response.questionId == question._id">
-	      		{{response.notes}}
+	      		<strong>{{response.userName}}:</strong> {{response.notes}}
 	      	</div>	
 	      </div>
 	    </div>
