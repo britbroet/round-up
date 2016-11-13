@@ -27,6 +27,7 @@ angular.module('Roundup', ['ui.router','ui.bootstrap','ngMaterial','ngMessages',
   .state('interviewCandidate', {
     url: '/interview/:id/:interviewId',
     templateUrl: 'js/app/views/interview.html',
+    controller: 'InterviewCtrl'
   })
   .state('roundReview', {
     url: '/review/:id',

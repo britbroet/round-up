@@ -196,4 +196,15 @@ angular.module('Roundup')
     $scope.round = res.data;
   });
 
+}])
+
+.controller('InterviewCtrl', ['$scope', '$state', 'Auth', '$stateParams', 'RoundService', function($scope, Auth, $state, $stateParams, RoundService) {
+  
+  var roundId = $stateParams.id;
+  var interviewId = $stateParams.interviewId;
+ 
+  RoundService.getRound(roundId, function(res) {
+    $scope.round = res.data;
+  });
+
 }]);
