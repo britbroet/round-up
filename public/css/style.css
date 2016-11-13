@@ -143,9 +143,10 @@ a.back_link {
 
 .edit_button_container {
   width: 100%;
-  display: flex;
   position: relative;
-  justify-content: space-between;
+  text-align: center;
+  margin-top: 20px;
+
 }
 
 .submit_cancel {
