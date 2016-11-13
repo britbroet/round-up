@@ -15,6 +15,14 @@ h3.view_title {
     justify-content: flex-end;*/
 }
 
+.roundup_button {
+    font-family: 'Roboto Condensed';
+    font-size: 18px !important;
+    padding: 4px 12px;
+    color: #fff;
+}
+
+
 /* INTERVIEW FORM */
 
 .question-container {
@@ -99,7 +107,68 @@ h3.view_title {
     font-style: italic;
 }
 
+/* HOMEPAGE */
 
+.homepage_featured {
+    height: 400px;
+    width: 100%;
+    background-image: url('/img/comp-coffee-orange.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    align-content: center;
+}
+
+.homepage_featured_overlay {
+    display: flex;
+    position: relative;
+    background:rgba(0,0,0,0.3);
+    height: 400px;
+    width: 100%;
+}
+
+.homepage_featured_container {
+    align-self: center;
+    width: 100%;
+    padding: 40px;
+}
+
+.homepage_title {
+    font-size: 65px;
+    color: white;
+   /* font-family: 'Oswald', sans-serif;*/
+    font-family: 'Roboto Condensed', sans-serif;
+    line-height: 60px;
+}
+
+.homepage_subtitle {
+    font-size: 26px;
+    color: white;
+    line-height: 32px;
+    font-weight: 200;
+    padding: 10px 0 20px 0;
+}
+
+.homepage_button_container {
+    margin: 20px 0;
+}
+
+#homepage_button_container .new_round_button {
+    background-color: #ff6600;
+    color: white;
+}
+
+#homepage_button_container .new_round_button:hover {
+    background-color: #e55b00;
+}
+
+#homepage_button_container .all_rounds_button {
+    background-color: #0078ff;
+}
+
+#homepage_button_container .all_rounds_button:hover {
+    background-color: #0060cc;
+}
 
 
 /*Setup*/
@@ -127,3 +196,28 @@ h3.view_title {
 #setup .step_title {
     text-align: center;
 }
+
+
+/* MEDIA QUERIES */
+
+@media (max-width: 500px) {
+  .homepage_featured_container {
+    padding: 20px;
+  }
+  .homepage_title {
+    margin-top: 0px;
+    font-size: 48px;
+    line-height: 48px;
+  }
+  .homepage_subtitle {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+@media (max-width: 800px) {
+  .homepage_title {
+    max-width: 555px;
+  }
+}
+
