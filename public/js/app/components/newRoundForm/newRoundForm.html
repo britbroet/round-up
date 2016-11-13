@@ -76,7 +76,7 @@
 		<form ng-submit="newRoundForm.addInterview()">
 	  		<form name="addInterviewForm" id="addInterviewForm" ng-submit="newQuestionForm.addInterview()">
 	    	<div style="margin: 0 auto">
-	    		<input type="text" name="addInterviewInput" placeholder="Ex. 'Session with hiring manger' or '1:00PM'" ng-model="newRoundForm.newInterview" style="font-size: 14px; width: 300px;">
+	    		<input type="text" name="addInterviewInput" placeholder="Ex. 'Session with hiring manger' or '1:00PM'" ng-model="newRoundForm.newInterview" style="font-size: 14px; width: 300px;" required>
 	    		<input type="submit" ng-if="newRoundForm.newRound.interviews.length == 0" value="Add Session" class="roundup_button_sm blue_button btn">
 	    		<input type="submit" ng-if="newRoundForm.newRound.interviews.length > 0" value="Add Another" class="roundup_button_sm blue_button btn">
 	    	</div>

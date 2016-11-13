@@ -1,8 +1,15 @@
 <div class="container">
+	<div style="margin-bottom: 20px;"><a href="/rounds" class="back_link">< back to all rounds</a></div>
+
 	<div style="position: relative">
 		<candidate-info></candidate-info>
 		<div class="edit_delete_container">
-			<a ng-href="/round/{{round._id}}">Edit Round</a>
+			<div>
+				<a ng-href="/round/{{round._id}}">Edit Round</a>
+			</div>
+			<div>
+				<ng-click ng-click="showConfirm($event, round)" class="delete_link">Delete Round</ng-click>
+			</div>
 		</div>
 	</div>
 	<hr>

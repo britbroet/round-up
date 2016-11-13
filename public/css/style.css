@@ -56,6 +56,12 @@ a {
   color: #0078ff;
 }
 
+a.back_link {
+  font-family: 'roboto condensed', sans-serif;
+  margin-bottom: 20px;
+  margin-left: 15px;
+}
+
 .component {
 	border: 1px dotted #888;
 	padding: 5px;
@@ -110,6 +116,7 @@ a {
 }
 
 
+
 /* INTERVIEW FORM */
 
 .question-container {
@@ -122,6 +129,18 @@ a {
 }
 
 /* EDIT ROUND PAGE */
+
+.edit_form_section_header {
+  font-family: 'roboto condensed';
+  font-size: 20px;
+  color: #0078ff;
+}
+
+.edit_field_label {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
 .edit_button_container {
   width: 100%;
   display: flex;
@@ -135,6 +154,12 @@ a {
 
 .delete {
   justify-content: right;
+}
+
+/* ROUND REVIEW PAGE */
+.delete_link {
+  color: red;
+  font-weight: 400;
 }
 
 /*MODAL TEST*/
@@ -200,8 +225,8 @@ a {
 
 .edit_delete_container {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 25px;
+  right: 30px;
   font-family: 'roboto condensed', sans-serif;
   font-weight: 700;
   font-size: 18px;
