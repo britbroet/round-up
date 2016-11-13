@@ -12,8 +12,13 @@
 
     RoundService.getAllRounds(function(data) {
       roundList.rounds = data.data;
-      console.log
+      console.log('data.data', data.data);
     });
+
+    roundList.filterFunction = function(element) {
+      return element.firstName.match(/^Ma/) ? true : false;
+    };
+
   }
 
   RoundList.$inject = ['RoundService'];

@@ -1,7 +1,18 @@
+h3.view_title {
+    text-align: center;
+    font-size: 26px;
+    padding: 30px;
+}
+
 .component {
 	border: 1px dotted #888;
 	padding: 5px;
 	margin: 10px 0;
+}
+
+.component_flex {
+/*    display: flex;
+    justify-content: flex-end;*/
 }
 
 /* INTERVIEW FORM */
@@ -54,10 +65,41 @@
     cursor: pointer;
 }
 
-/* Rounds List */
-.round-list-item {
-    margin: 20px;
+/* LISTS */
+
+.search_filter {
+    max-width: 900px;
+    text-align: right;
 }
+
+.search_filter_input {
+    margin-left: 10px;
+    width: 400px;
+}
+
+.list_items_container {
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.list_item {
+    padding: 30px;
+    position: relative;
+}
+
+.edit_delete_container {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+}
+
+/* Round List */
+.list_position_desc {
+    font-size: 14px;
+    font-style: italic;
+}
+
+
 
 
 /*Setup*/
