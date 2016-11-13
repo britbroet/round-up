@@ -1,5 +1,13 @@
-<div class="component">
-  <em>components > interviewRubric > interviewRubric.html</em>
+<div class="container">
+
+  <h3 class="interview_rubric_header">{{interviewRubric.userData.firstName}}'s notes for 
+    <div style="display: inline-block;" ng-repeat="interview in interviewRubric.interviews">
+      <div ng-if="interview._id == interviewRubric.thisInterview"><strong>{{interview.name}}</strong></div>
+    </div> interview:
+  </h3>
+
+
+
 
   <form ng-submit="interviewRubric.submitScores()" >
     <div class="question-container" ng-repeat="question in interviewRubric.questions">
@@ -35,7 +43,7 @@
     </div>
 
     <div class="text-center">
-      <input type="submit" value="Save" style="margin: 20px 0;">
+      <input type="submit" class="roundup_button orange_button btn" value="Submit Notes" style="margin: 20px 0;">
     </div>
   </form>
 

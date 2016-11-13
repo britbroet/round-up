@@ -1,7 +1,16 @@
+body {
+  color: #3e3e3e;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'roboto condensed', sans-serif;
+}
+
 h3.view_title {
   text-align: center;
   font-size: 26px;
   padding: 30px;
+  font-family: 'roboto condensed', sans-serif;
 }
 
 h1.view_title {
@@ -12,8 +21,45 @@ h1.view_title {
   color: #ff6600;
 }
 
+h2.view_title {
+  text-align: center;
+  padding: 30px;
+  font-family: 'roboto condensed', sans-serif;
+}
+
+h1.candidate_name {
+  font-family: 'roboto condensed', sans-serif;
+  color: #ff6600;
+  font-weight: 700;
+  display: inline-block;
+}
+
+h1.candidate_position {
+  font-family: 'roboto condensed', sans-serif;
+  color: #ff6600;
+  font-weight: 300;
+  display: inline-block;
+}
+
+h3.interview_rubric_header {
+/*  font-size: 2.0rem;
+  font-weight: 400;
+  line-height: 3.2rem;*/
+  color: #fff;
+  text-align: center;
+  background-color: #0078ff;
+  padding: 10px;
+  font-family: 'roboto condensed';
+}
+
 a {
   color: #0078ff;
+}
+
+a.back_link {
+  font-family: 'roboto condensed', sans-serif;
+  margin-bottom: 20px;
+  margin-left: 15px;
 }
 
 .component {
@@ -28,7 +74,6 @@ a {
 }
 
 .roundup_button {
-  font-family: 'Roboto Condensed';
   font-size: 18px !important;
   padding: 4px 12px;
 }
@@ -60,6 +105,15 @@ a {
   color: #fff !important;
 }
 
+/* CANDIDATE INFO */
+.candidate_info_container {
+  border-bottom: 1px solid #e1e1e1;
+}
+
+/* FORMS */
+.roundup_text_field {
+  margin: 10px 0;
+}
 
 
 
@@ -72,6 +126,41 @@ a {
 .interview-question {
 	font-size: 14px;
 	font-weight: bold;
+}
+
+/* EDIT ROUND PAGE */
+
+.edit_form_section_header {
+  font-family: 'roboto condensed';
+  font-size: 20px;
+  color: #0078ff;
+}
+
+.edit_field_label {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.edit_button_container {
+  width: 100%;
+  position: relative;
+  text-align: center;
+  margin-top: 20px;
+
+}
+
+.submit_cancel {
+  justify-content: left;
+}
+
+.delete {
+  justify-content: right;
+}
+
+/* ROUND REVIEW PAGE */
+.delete_link {
+  color: red;
+  font-weight: 400;
 }
 
 /*MODAL TEST*/
@@ -137,8 +226,11 @@ a {
 
 .edit_delete_container {
   position: absolute;
-  top: 2px;
-  right: 2px;
+  top: 25px;
+  right: 30px;
+  font-family: 'roboto condensed', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
 }
 
 /* ROUNDS LIST */

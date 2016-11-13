@@ -30,11 +30,15 @@
     var roundId = $stateParams.id;
     var interviewId = $stateParams.interviewId;
 
+    interviewRubric.thisInterview = interviewId;
+
 	  RoundService.getRound(roundId, function(res) {
 	    interviewRubric.round = res.data;
 	    console.log('round data? ', res.data);
 	    interviewRubric.questions = res.data.questions;
 	    console.log('questions? ', interviewRubric.questions);
+	    interviewRubric.interviews = res.data.interviews;
+	    console.log('interview?', interviewRubric.interviews)
 	    interviewRubric.responses = res.data.responses;
 	    console.log('responses: ', interviewRubric.responses);
 	  });
