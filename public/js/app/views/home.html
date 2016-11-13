@@ -9,7 +9,7 @@
 <hr>
 
 	<div ng-show="loggedIn">
-	  <h1 ng-show="loggedIn"> Hello: {{ currentUser._doc.firstName }}</h1>
+	  <!-- <h1 ng-show="loggedIn"> Hello: {{ currentUser._doc.firstName }}</h1> -->
 
 
 
@@ -44,7 +44,23 @@ window.onclick = function(event) {
 
 
 
-<button id="myBtn" class="btn btn-primary">Add New Candidate</button>
+
+<div class="homepage_featured">
+  <div class="homepage_featured_overlay">
+    <div class="homepage_featured_container">
+      <div class="homepage_title"> 
+        Interview rounds made easy.
+      </div>
+      <div class="homepage_subtitle">
+        Track and share interview notes throughout candidate's round. 
+      </div>
+      <div id="homepage_button_container" class="homepage_button_container">
+        <button id="myBtn" class="roundup_button new_round_button btn" style="margin-right: 10px;">Start New Round</button>
+        <button id="allRounds" class="btn all_rounds_button roundup_button">See All Rounds</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
