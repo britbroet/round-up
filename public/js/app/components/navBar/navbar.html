@@ -23,7 +23,10 @@
           </ul>
         </li>
         <li><a ng-hide="navBar.Auth.isLoggedIn()" href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a ng-show="navBar.Auth.isLoggedIn()" ng-click="navBar.logout()" href="/" ><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        <li>
+          <div ng-show="navBar.Auth.isLoggedIn()" style="font-size: 10px; color: #9d9d9d">logged in as {{navBar.userData.firstName}}</div>
+        <a ng-show="navBar.Auth.isLoggedIn()" ng-click="navBar.logout()" href="/" style="padding-top: 3px; padding-bottom: 3px;" >
+        <span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
       </ul>
     </div>
   </div>

@@ -1,46 +1,48 @@
-<div style="position: relative">
-	<candidate-info></candidate-info>
-	<div class="edit_delete_container">
-		<a ng-href="/round/{{round._id}}">Edit Round</a>
-	</div>
-</div>
-<hr>
-
-<h3>Interview Round Results</h3>
-
-	<div class="row">
-		<div class="col-xs-8 interview-question">
-			Question
-		</div>
-		<div class="col-xs-4 interview-question">
-			Cumulative Score
+<div class="container">
+	<div style="position: relative">
+		<candidate-info></candidate-info>
+		<div class="edit_delete_container">
+			<a ng-href="/round/{{round._id}}">Edit Round</a>
 		</div>
 	</div>
+	<hr>
 
-<div ng-repeat="question in round.questions">
-	<div class="panel-group">
-	  <div class="panel panel-default">
-	    <div class="panel-heading">
-	      <h4 class="panel-title">
-	        <a data-toggle="collapse" ng-href="#{{question._id}}">
-	        	<div class="row">
-					<div class="col-xs-8">
-						{{question.question}}
-					</div>
-					<div class="col-xs-4">
-						5
-					</div>
-				</div>	
-	        </a>
-	      </h4>
-	    </div>
-	    <div id="{{question._id}}" class="panel-collapse collapse">
-	      <div class="panel-body">
-	      	<div ng-repeat="response in round.responses" data-ng-if="response.questionId == question._id">
-	      		<strong>{{response.userName}}:</strong> {{response.notes}}
-	      	</div>	
-	      </div>
-	    </div>
-	  </div>
+	<h3>Interview Round Results</h3>
+
+		<div class="row">
+			<div class="col-xs-8 interview-question">
+				Question
+			</div>
+			<div class="col-xs-4 interview-question">
+				Cumulative Score
+			</div>
+		</div>
+
+	<div ng-repeat="question in round.questions">
+		<div class="panel-group">
+		  <div class="panel panel-default">
+		    <div class="panel-heading">
+		      <h4 class="panel-title">
+		        <a data-toggle="collapse" ng-href="#{{question._id}}">
+		        	<div class="row">
+						<div class="col-xs-8">
+							{{question.question}}
+						</div>
+						<div class="col-xs-4">
+							5
+						</div>
+					</div>	
+		        </a>
+		      </h4>
+		    </div>
+		    <div id="{{question._id}}" class="panel-collapse collapse">
+		      <div class="panel-body">
+		      	<div ng-repeat="response in round.responses" data-ng-if="response.questionId == question._id">
+		      		<strong>{{response.userName}}:</strong> {{response.notes}}
+		      	</div>	
+		      </div>
+		    </div>
+		  </div>
+		</div>
 	</div>
 </div>

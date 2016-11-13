@@ -12,6 +12,11 @@
     navBar.Auth = Auth;
     console.log("this is Auth",  Auth)
 
+    // ACCESS USER DATA
+    var payload = Auth.currentUser();
+    navBar.userData = payload._doc;
+    console.log('navBar.userData.firstName ', navBar.userData.firstName);
+
     navBar.logout = function() {
     console.log('clicked');
     Auth.removeToken();

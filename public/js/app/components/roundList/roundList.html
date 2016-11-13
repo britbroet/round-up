@@ -22,7 +22,7 @@
 				<h5>Interview Candidate:</h5>
 				<div ng-if="round.interviews.length > 0">
 					<div ng-repeat="interview in round.interviews" style="display: inline-block;">
-						<a ng-href="interview/{{$parent.$parent.round._id}}/{{interview._id}}" class="btn btn-default">{{interview.name}}</a>
+						<a ng-href="interview/{{$parent.$parent.round._id}}/{{interview._id}}" class="btn interview_button">{{interview.name}}</a>
 					</div>
 				</div>
 				<div ng-if="round.interviews.length === 0">
