@@ -74,7 +74,7 @@ a.back_link {
 }
 
 .roundup_button {
-  font-size: 18px !important;
+  font-size: 16px !important;
   padding: 4px 12px;
 }
 
@@ -84,6 +84,13 @@ a.back_link {
   padding: 2px 10px;
   margin: -2px 0 0 5px;
 }
+
+/*.roundup_button_md {
+  font-family: 'Roboto Condensed';
+  font-size: 12px !important;
+  padding: 2px 10px;
+  margin: -2px 0 0 5px;
+}*/
 
 .blue_button {
   background-color: #0078ff;
@@ -103,6 +110,21 @@ a.back_link {
 .orange_button:hover {
   background-color: #cc5100;
   color: #fff !important;
+}
+
+.cancel_button {
+  background-color: #fff;
+  border: 1px solid #c5c5c5 !important;
+  color: #444;
+}
+
+.cancel_button:hover {
+  background-color: #c5c5c5;
+  color: #444 !important;
+}
+
+.icon {
+  width: 25px;
 }
 
 /* CANDIDATE INFO */
@@ -206,7 +228,9 @@ a.back_link {
 
 .search_filter {
   max-width: 900px;
-  text-align: right;
+  text-align: center;
+  font-size: 14px;
+  margin: 0 auto;
 }
 
 .search_filter_input {
@@ -222,6 +246,8 @@ a.back_link {
 .list_item {
   padding: 30px;
   position: relative;
+  min-height: 200px;
+
 }
 
 .edit_delete_container {
@@ -231,6 +257,24 @@ a.back_link {
   font-family: 'roboto condensed', sans-serif;
   font-weight: 700;
   font-size: 18px;
+}
+
+.resource_list {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.resource_list_item {
+  border-bottom: 1px solid #ccc; 
+  padding: 10px;
+}
+
+.resource_list_edit_link {
+  text-decoration: none;
+}
+
+.resource_list_description {
+  margin-left: 15px;
 }
 
 /* ROUNDS LIST */
