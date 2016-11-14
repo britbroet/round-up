@@ -18,6 +18,8 @@
 	    candidateInfo.round = res.data;
 	    candidateInfo.candidate = candidateInfo.round.candidate;
 	    candidateInfo.position = candidateInfo.round.position;
+      candidateInfo.interviews = candidateInfo.round.interviews;
+      console.log('interviews ', candidateInfo.interviews);
 	  });
   }
 
