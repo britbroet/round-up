@@ -23,6 +23,7 @@
 
     $scope.showConfirm = function(ev, candidate) {
       // Appending dialog to document.body to cover sidenav in docs app
+      console.log('canddate: ', candidate);
       var thisCandidate = candidate;
       var confirm = $mdDialog.confirm()
             .title('Are you sure you want to delete this candidate?')
