@@ -1,5 +1,5 @@
 <nav class="navbar navbar-default navbar-inverse" role="navigation">
-  <div class="container-fluid">
+  <div class="container-fluid" style="padding-left: 50px;">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
@@ -22,10 +22,10 @@
             <li><a href="/rounds">Rounds</a></li>
           </ul>
         </li>
-        <li><a ng-hide="navBar.Auth.isLoggedIn()" href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a ng-if="!navBar.Auth.currentUser()" href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
         <li>
-          <div ng-show="navBar.Auth.isLoggedIn()" style="font-size: 10px; color: #9d9d9d">logged in as {{navBar.userData.firstName}}</div>
-        <a ng-show="navBar.Auth.isLoggedIn()" ng-click="navBar.logout()" href="/" style="padding-top: 3px; padding-bottom: 3px;" >
+          <div ng-if="navBar.Auth.currentUser()" style="font-size: 10px; color: #9d9d9d">logged in as {{navBar.userData.firstName}}</div>
+        <a ng-if="navBar.Auth.currentUser()" ng-click="navBar.logout()" href="/" style="padding-top: 3px; padding-bottom: 3px;" >
         <span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
       </ul>
     </div>
