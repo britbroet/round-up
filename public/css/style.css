@@ -339,11 +339,11 @@ a.back_link {
   width: 100%;*/
 }
 
-.homepage_featured_container {
-  align-self: center;
-  width: 100%;
-  padding: 40px;
-}
+  .homepage_featured_container {
+    align-self: center;
+    width: 100%;
+    padding: 100px;
+  }
 
 .homepage_title {
   font-size: 65px;
@@ -447,6 +447,11 @@ a.back_link {
   .homepage_subtitle {
     font-size: 20px;
     line-height: 24px;
+  }
+  .homepage_featured_container {
+    align-self: center;
+    width: 100%;
+    padding: 40px;
   }
 }
 
