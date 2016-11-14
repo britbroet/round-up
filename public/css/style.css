@@ -127,6 +127,19 @@ a.back_link {
   width: 25px;
 }
 
+/* NAVBAR */
+.lasso_logo {
+  width: 30px;
+  float: left;
+  padding-right: 5px;
+}
+
+.logo_text {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #fff;
+  font-size: 24px;
+}
+
 /* CANDIDATE INFO */
 .candidate_info_container {
   border-bottom: 1px solid #e1e1e1;
