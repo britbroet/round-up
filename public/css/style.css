@@ -305,9 +305,9 @@ a.back_link {
 /* HOMEPAGE */
 
 .homepage_featured {
-  height: 400px;
-  width: 100%;
-  background-image: url('/img/comp-coffee-orange.jpg');
+/*  height: 400px;
+  width: 100%;*/
+  background-image: url('/img/tablebg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -317,9 +317,9 @@ a.back_link {
 .homepage_featured_overlay {
   display: flex;
   position: relative;
-  background:rgba(0,0,0,0.3);
-  height: 400px;
-  width: 100%;
+  background:rgba(0,0,0,0.4);
+/*  height: 400px;
+  width: 100%;*/
 }
 
 .homepage_featured_container {
