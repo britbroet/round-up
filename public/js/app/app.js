@@ -74,6 +74,10 @@ angular.module('Roundup', ['ui.router','ui.bootstrap','ngMaterial','ngMessages',
     url: '/positions/:id',
     templateUrl: 'js/app/views/editPosition.html',
     controller: 'EditPositionCtrl'
+  })
+  .state('resources', {
+    url: '/resources',
+    templateUrl: 'js/app/views/resources.html',
   });
 
 	$locationProvider.html5Mode(true);

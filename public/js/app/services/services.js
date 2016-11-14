@@ -61,7 +61,9 @@ angular.module('Roundup')
   }
   //delete one candidate
   this.deleteCandidate = function(candidate, callback) {
+    console.log("candidate id:", candidate._id)
     $http.delete('/api/candidates/' + candidate._id).then(function success(res) {
+      console.log("candidate id:", candidate._id)
       callback(res);
     }, function error(res) {
       console.log(res);
@@ -215,4 +217,7 @@ angular.module('Roundup')
       console.log('Error adding responses: ', res);
     });
   }
+}])
+.service('ResourcesService', ['$http', function($http) {
+      console.log(" inresourcesService");
 }]);
