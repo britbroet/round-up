@@ -9,7 +9,7 @@
 	<hr>
 
 	<div class="row">
-		<div ng-repeat="round in roundList.rounds | filter: query" class="col-xs-4">
+		<div ng-repeat="round in roundList.rounds | filter: query" class="col-sm-6 col-md-4" style="margin: 0 auto;">
 			<div class="list_item">
 				<div>
 					<a ng-href="review/{{round._id}}">
@@ -26,7 +26,7 @@
 					</div>
 				</div>
 				<div ng-if="round.interviews.length === 0">
-					<em>No interviews scheduled</em>
+					<em style="font-size: 14px; color: #777;">No interviews scheduled</em>
 				</div>
 			</div>
 		</div>
