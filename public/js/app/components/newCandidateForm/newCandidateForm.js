@@ -11,7 +11,8 @@
     newCandidateForm.candidates = [];
     newCandidateForm.newCandidate = {
       firstName: '',
-      lastName: ''
+      lastName: '',
+      linkedIn: ''
     };
 
   newCandidateForm.submitCandidate = function() {

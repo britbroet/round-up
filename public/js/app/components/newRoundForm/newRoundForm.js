@@ -20,7 +20,8 @@
     newRoundForm.newRound = {
       candidate: {
         firstName: '',
-        lastName: ''
+        lastName: '',
+        linkedIn: ''
       },
       position: {
         title: '',
@@ -65,6 +66,7 @@
         newRoundForm.candidate = res.data;
         newRoundForm.newRound.candidate.firstName = newRoundForm.candidate.firstName;
         newRoundForm.newRound.candidate.lastName = newRoundForm.candidate.lastName;
+        newRoundForm.newRound.candidate.linkedIn = newRoundForm.candidate.linkedIn;
         console.log('candidate data added: ', newRoundForm.newRound);
         newRoundForm.someThing = "addingPosition";
       });

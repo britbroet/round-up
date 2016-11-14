@@ -215,4 +215,7 @@ angular.module('Roundup')
       console.log('Error adding responses: ', res);
     });
   }
+}])
+.service('ResourcesService', ['$http', function($http) {
+      console.log(" inresourcesService");
 }]);
