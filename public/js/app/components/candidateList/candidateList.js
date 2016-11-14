@@ -23,6 +23,7 @@
 
     $scope.showConfirm = function(ev, candidate) {
       // Appending dialog to document.body to cover sidenav in docs app
+      console.log('canddate: ', candidate);
       var thisCandidate = candidate;
       console.log("thisCandidate", thisCandidate)
       var confirm = $mdDialog.confirm()
