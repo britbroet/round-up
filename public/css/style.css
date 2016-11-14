@@ -264,6 +264,11 @@ a.back_link {
   margin: 0 auto;
 }
 
+.resource_list_questions {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .resource_list_item {
   border-bottom: 1px solid #ccc; 
   padding: 10px;
