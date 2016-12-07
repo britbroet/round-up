@@ -1,12 +1,12 @@
 (function() {
   angular.module('Roundup')
-  .component('navBar', {
-    templateUrl: 'js/app/components/navBar/navBar.html',
-    controller: NavBar,
-    controllerAs: 'navBar'
+  .component('navyBar', {
+    templateUrl: 'js/app/components/navyBar/navyBar.html',
+    controller: NavyBar,
+    controllerAs: 'navyBar'
   });
 
-  function NavBar($state, Auth) {
+  function NavyBar($state, Auth) {
     console.log('in navbar controller');
     // var navBar = this;
     // navBar.Auth = Auth;
@@ -36,7 +36,7 @@
     // }
   }
 
-  NavBar.$inject = ['$state', 'Auth'];
+  NavyBar.$inject = ['$state', 'Auth'];
 })()
 
 
