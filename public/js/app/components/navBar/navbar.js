@@ -6,7 +6,7 @@
     controllerAs: 'navBar'
   });
 
-  function NavBar($state, $location, Auth) {
+  function NavBar($state, Auth) {
     var navBar = this;
     navBar.Auth = Auth;
     navBar.userData = {};
@@ -35,7 +35,7 @@
     }
   }
 
-  NavBar.$inject = ['$state', '$location', 'Auth'];
+  NavBar.$inject = ['$state', 'Auth'];
 })()
 
 
