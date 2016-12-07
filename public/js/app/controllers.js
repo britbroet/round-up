@@ -1,6 +1,6 @@
 angular.module('Roundup')
 
-.controller('RoundCtrl', ['$scope', '$state', 'QuestionService', 'CandidateService', 'UserService', 'RoundService', function($scope, $state, QuestionService, CandidateService, UserService, RoundService) {
+.controller('RoundCtrl', ['$scope', '$state', 'QuestionService', 'CandidateService', 'UserService', 'RoundService', 'Auth', function($scope, $state, QuestionService, CandidateService, UserService, RoundService, Auth) {
   $scope.questions = {};
   $scope.candidates = {};
   $scope.users = {};
