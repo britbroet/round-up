@@ -7,6 +7,7 @@
   });
 
   function NavBar($state, Auth) {
+    console.log('in navbar controller');
     var navBar = this;
     navBar.Auth = Auth;
     navBar.userData = {};
